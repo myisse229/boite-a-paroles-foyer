@@ -145,3 +145,182 @@ button:disabled {
     font-size: 27px;
   }
 }
+/* ============================= */
+/* ESPACE ÉDUCATEUR              */
+/* ============================= */
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.toolbar button {
+  flex: 1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stat {
+  background: #f2f4f7;
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.stat span {
+  color: #667085;
+  font-size: 14px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-card {
+  border: 1px solid #d0d5dd;
+  border-radius: 16px;
+  padding: 18px;
+  background: #fff;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.date {
+  color: #667085;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.category {
+  background: #eef2ff;
+  border-radius: 20px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.message-content {
+  margin: 18px 0;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.status-pending {
+  background: #fff1f0;
+}
+
+.status-progress {
+  background: #fff7e6;
+}
+
+.status-done {
+  background: #ecfdf3;
+}
+
+.status-select {
+  width: auto;
+  padding: 9px 12px;
+}
+
+.empty,
+.loading,
+.error-message {
+  text-align: center;
+  padding: 25px;
+  color: #667085;
+}
+
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .message-header {
+    flex-direction: column;
+  }
+
+  .message-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .status-select {
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+}
+
+/* Impression */
+@media print {
+  body {
+    background: white;
+  }
+
+  .loginBox,
+  #loginBox,
+  .toolbar,
+  .filters,
+  .status-select {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+  }
+
+  .message-card {
+    break-inside: avoid;
+  }
+}
