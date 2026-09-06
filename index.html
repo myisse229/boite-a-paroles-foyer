@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boîte à Paroles du Foyer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+<section class="card">
+
+<div class="icon">💬</div>
+
+<h1>Boîte à Paroles</h1>
+
+<p class="intro">
+Tu peux ici signaler, demander ou proposer quelque chose concernant le foyer.
+</p>
+
+<form id="form">
+
+<label for="categorie">Que veux-tu faire ?</label>
+
+<select id="categorie" required>
+<option value="">Choisis une catégorie</option>
+<option>🚨 Signalement</option>
+<option>💬 Réclamation</option>
+<option>🙋 Demande</option>
+<option>💡 Proposition / idée</option>
+<option>❤️ Autre</option>
+</select>
+
+<label>Comment veux-tu déposer ton message ?</label>
+
+<div class="choice">
+
+<label class="radio">
+<input type="radio" name="identite" value="anonyme" checked>
+🔒 Anonyme
+</label>
+
+<label class="radio">
+<input type="radio" name="identite" value="prenom">
+👤 Avec mon prénom
+</label>
+
+</div>
+
+<div id="prenomBox" class="hidden">
+
+<label for="prenom">Ton prénom</label>
+
+<input
+id="prenom"
+type="text"
+maxlength="80"
+placeholder="Entre ton prénom">
+
+</div>
+
+<label for="message">Ton message</label>
+
+<textarea
+id="message"
+maxlength="3000"
+required
+placeholder="Écris ici ce que tu souhaites signaler, demander ou proposer..."></textarea>
+
+<div class="counter">
+<span id="count">0</span>/3000
+</div>
+
+<button type="submit" id="submit">
+📤 Envoyer ma note
+</button>
+
+<p id="result" class="result"></p>
+
+</form>
+
+</section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
